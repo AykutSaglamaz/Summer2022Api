@@ -60,7 +60,7 @@ public class Get06 extends HerOkuAppBaseUrl {
                 body("bookingdates.checkout", equalTo("2019-01-01")).
                 body("additionalneeds", equalTo("Breakfast"));
 
-        //2.yol, JsonPath kullanarak. JsonPath bir class'tir ve JSON data'nin icerisinde hareket etmek icin bircok kullanisli methodu vardir.
+        //2.yol,
         response.
                 then().
                 assertThat().
@@ -68,6 +68,7 @@ public class Get06 extends HerOkuAppBaseUrl {
                 contentType(ContentType.JSON);
 
         // JsonPath objesini response objesinden olusturma
+        //JsonPath kullanarak. JsonPath bir class'tir ve JSON data'nin icerisinde hareket etmek icin bircok kullanisli methodu vardir.
         JsonPath json = response.jsonPath();
         assertEquals("Dane", json.getString("firstname"));
         assertEquals("Soyisim eslesmiyor", "Dominguez", json.getString("lastname"));
