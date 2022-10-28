@@ -5,7 +5,7 @@ public class ApiNote01 {
 	 API : Application Programing Interface: uygulama programlama Arayuzu
 
 	 API'larin arayuzleri yoktur (bu yuzden programlama Arayuzu denir)
-	 API kullanirken kullanici hicbir hareketlilik gormez, fakat ne yaptiginizi bilirsiniz)
+	 API kullanirken kullanici hicbir hareketlilik gormeyiz, fakat ne yaptiginizi biliriz)
 	 API'ler birbirleriyle iletisim kurmak icin vardir.
 	 orn:
 	 	Amazon => API       API <= Visa

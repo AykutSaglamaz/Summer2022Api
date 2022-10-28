@@ -5,8 +5,8 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
 public class JsonPlaceHolderBaseUrl {
-    //for base_url I create a package and I create base_urls and I use from there.
-    // So, in test method I do not create base_url again and again
+    // base_url icin bir package ve base_urls olusturuyorum ardindan istedigim her yerden buna erisebilirim.
+    // Bu amacla, test methodda  her seferinde base_url olusturmak zorunda kalmiyorum
 
     //RequestSpecification data type'nde bir obje olusturun
     protected RequestSpecification spec;

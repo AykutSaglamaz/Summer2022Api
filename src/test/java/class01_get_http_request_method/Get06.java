@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 public class Get06 extends HerOkuAppBaseUrl {
         /*
         Given
-            https://restful-booker.herokuapp.com/booking/5528
+            https://restful-booker.herokuapp.com/booking/560
         When
             Kullanici GET request gonderir => URL
         Then
@@ -24,8 +24,8 @@ public class Get06 extends HerOkuAppBaseUrl {
         And
             Response body asagidaki gibi olmali;
             {
-                "firstname": "Dane",
-                "lastname": "Dominguez",
+                "firstname": "Jim",
+                "lastname": "Brown",
                 "totalprice": 111,
                 "depositpaid": true,
                 "bookingdates": { "checkin": "2018-01-01",
@@ -37,7 +37,7 @@ public class Get06 extends HerOkuAppBaseUrl {
     @Test
     public void get06(){
         //1.Adim: set URL
-        spec.pathParams("first", "booking", "second", 5528);
+        spec.pathParams("first", "booking", "second", 560);
 
         //2.Adim: Set expected data
 
@@ -52,8 +52,8 @@ public class Get06 extends HerOkuAppBaseUrl {
                 assertThat().
                 statusCode(200).
                 contentType(ContentType.JSON).
-                body("firstname", equalTo("Dane")).
-                body("lastname", equalTo("Dominguez")).
+                body("firstname", equalTo("Jim")).
+                body("lastname", equalTo("Brown")).
                 body("totalprice", equalTo(111)).
                 body("depositpaid", equalTo(true)).
                 body("bookingdates.checkin", equalTo("2018-01-01")).
@@ -70,8 +70,8 @@ public class Get06 extends HerOkuAppBaseUrl {
         // JsonPath objesini response objesinden olusturma
         //JsonPath kullanarak. JsonPath bir class'tir ve JSON data'nin icerisinde hareket etmek icin bircok kullanisli methodu vardir.
         JsonPath json = response.jsonPath();
-        assertEquals("Dane", json.getString("firstname"));
-        assertEquals("Soyisim eslesmiyor", "Dominguez", json.getString("lastname"));
+        assertEquals("Jim", json.getString("firstname"));
+        assertEquals("Soyisim eslesmiyor", "Brown", json.getString("lastname"));
         assertEquals("Totalprice eslesmiyor", 111, json.getInt("totalprice"));
         assertEquals("Checkin date eslesmiyor", "2018-01-01", json.getString("bookingdates.checkin"));
 
@@ -80,8 +80,8 @@ public class Get06 extends HerOkuAppBaseUrl {
         SoftAssert softAssert = new SoftAssert();
 
         // ii) SoftAssert objesini kullanarak Assertion yap
-        softAssert.assertEquals(json.getString("firstname"), "Dane", "Isim eslesmiyor");
-        softAssert.assertEquals(json.getString("lastname"), "Dominguez", "Soyisim eslesmiyor");
+        softAssert.assertEquals(json.getString("firstname"), "Jim", "Isim eslesmiyor");
+        softAssert.assertEquals(json.getString("lastname"), "Brown", "Soyisim eslesmiyor");
         softAssert.assertEquals(json.getInt("totalprice"), 111, "Totalprice eslesmiyor");
 
         // MUTLAKA EN SONDA assertAll() yapilmali. Eger assertAll() kullanmazsaniz herzaman test gecti gorunur fakat bu anlamli olmayabilir
