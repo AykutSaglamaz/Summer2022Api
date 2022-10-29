@@ -20,7 +20,7 @@ public class Get09 extends HerOkuAppBaseUrl {
         Then
             Response body should be like that;
             {
-                "firstname": "James",
+                "firstname": "Jim",
                 "lastname": "Brown",
                 "totalprice": 111,
                 "depositpaid": true,
@@ -34,7 +34,7 @@ public class Get09 extends HerOkuAppBaseUrl {
      */
 
     @Test
-    public void get09(){
+    public void get09() {
 
         //1. Step: Set the Url
         spec.pathParams("first", "booking", "second", 5450);
@@ -46,7 +46,7 @@ public class Get09 extends HerOkuAppBaseUrl {
         expectedbookingdates.put("checkout", "2019-01-01");
 
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("firstname", "James");
+        expectedData.put("firstname", "Jim");
         expectedData.put("lastname", "Brown");
         expectedData.put("totalprice", 111);
         expectedData.put("depositpaid", true);
@@ -70,8 +70,8 @@ public class Get09 extends HerOkuAppBaseUrl {
         assertEquals(expectedData.get("depositpaid"), actualData.get("depositpaid"));
         assertEquals(expectedData.get("additionalneeds"), actualData.get("additionalneeds"));
 
-        assertEquals(expectedbookingdates.get("checkin"), ((Map)actualData.get("bookingdates")).get("checkin"));
-        assertEquals(expectedbookingdates.get("checkout"), ((Map)actualData.get("bookingdates")).get("checkout"));
+        assertEquals(expectedbookingdates.get("checkin"), ((Map) actualData.get("bookingdates")).get("checkin"));
+        assertEquals(expectedbookingdates.get("checkout"), ((Map) actualData.get("bookingdates")).get("checkout"));
 
 
     }
