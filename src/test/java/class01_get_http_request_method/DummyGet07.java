@@ -35,6 +35,7 @@ public class DummyGet07 extends DummyBaseUrl {
             "employee_age": 41,
             "profile_image": ""
      */
+
     @Test
     public void dummyGet07(){
         //1.adim: set the url
@@ -54,6 +55,7 @@ public class DummyGet07 extends DummyBaseUrl {
         //2.yol
         JsonPath json = response.jsonPath();
         spec.pathParams("first","api","second","v1","third","employee","final",19);
+
         Response response2 = given().spec(spec).when().get("/{first}/{second}/{third}/{final}");
         response2.prettyPrint();
 

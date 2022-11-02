@@ -12,7 +12,7 @@ public class Get01 {
         APi test'te Gherkin dilini (Language) kullaniriz
    Gherkin dilinde bazi anahtar kavramlar kullaniriz: Given, When, Then, And
     (Size bir kitap verildi (given), okudugunuzda(when), basarili olursunuz(Then))
-        Given : On kosullari bildirir (Sartlar)
+        Given : On kosullari bildirir (Sartlar) (baslangic)
         When : Hareketleri (yapacagimiz isi) bildirmek icin kullanilir
         Then : Sonuc icin kullanilir
         And : Coklu 'Given, When, Then' icin kullanilir
