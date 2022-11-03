@@ -11,14 +11,14 @@ public class Get01 {
     /*
         APi test'te Gherkin dilini (Language) kullaniriz
    Gherkin dilinde bazi anahtar kavramlar kullaniriz: Given, When, Then, And
-    (Size bir kitap verildi (given), okudugunuzda(when), basarili olursunuz(Then))
+    ((given) Size bir kitap verildi , (when)okudugunuzda, (Then) basarili olursunuz)
         Given : On kosullari bildirir (Sartlar) (baslangic)
         When : Hareketleri (yapacagimiz isi) bildirmek icin kullanilir
         Then : Sonuc icin kullanilir
         And : Coklu 'Given, When, Then' icin kullanilir
      */
 
-    /* test case olusturma
+    /*         test case olusturma
        Given
            https://restful-booker.herokuapp.com/booking/3
        When
@@ -47,15 +47,16 @@ public class Get01 {
         response.prettyPrint(); //prettyPrint() consolde yazdirmak icin kullanilir
 
         // 4) Assertion yap
-    /*
+
+        response.then().assertThat().statusCode(200).contentType("application/JSON").statusLine("HTTP/1.1 200 OK");
+
+         /*
         Eger Assertion'da coklu hata varsa, kodun calismasi ilk hatada durur ve sonraki kodlar calismaz
         Yani ikinci, ucuncu gibi hatalar hakkida hicbir bilgi alamazsiniz bu iyi birsey degildir
         Bu nedenle bu tip Assertion'a "Hard Assertion" denir
         Diger tip Assertion ise "Soft Assertion"dir
         Soft Assertion (Verification)'da butun kodlar calisir/kosar ve butun assertion'lar veya hatalar icin rapor alirsiniz
      */
-        response.then().assertThat().statusCode(200).contentType("application/JSON").statusLine("HTTP/1.1 200 OK");
-
         // statusCode, contentType ve StatusLine gibi console yazdirma
         System.out.println(response.getStatusCode());
         System.out.println(response.getContentType());

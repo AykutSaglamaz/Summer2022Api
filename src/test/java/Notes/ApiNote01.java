@@ -36,7 +36,7 @@ public class ApiNote01 {
 	 	 orn: Guncelleme islemi icin 10 URL, datayi okumak icin 20 URL olabilir
 
 	 	Insert (olustur) islemleri icin birden fazla URL ihtiyacimiz var
-	 	Neden? Cunku bazen database'e ogrenci, ebeveyn, ders notlari eklemek isteriz, bu yuzden her biri icin ayri URL ihtiyacimiz var
+	 	Neden? Cunku bazen database'e ogrenci, ebeveyn, ders notlari eklemek isteriz, bu yuzden her biri icin ayri ayri URL ihtiyacimiz var
 	 	 Farkli her insert (olustur) islemi icin, birer tane endpoint(URL) olusturulur.
 
 	            ---Mulakat Sorusu---Atomasyon Tester olarak ne yaparsiniz
@@ -84,7 +84,9 @@ public class ApiNote01 {
     If the status code is 2XX then you can test the details.
 ----------------------------------------------------------------
     POSTMAN: It is an app to test endpoints of an API, MANUALLY. It is MANUAL TESTING APP.
+            postman API endpointlerini test etmek icin kullanilan bir applikasyondur ve sadece MANUEL test icin kullanilir
     REST ASSURED LIBRARY : It is a library in Java which is used to test endpoints in automation.
+
     Q: How do u test API?
     For Automation; I use rest assured library, for manual test; I use POSTMAN.
     You should test behaviour manually first, according to the  manual result, you have to type automation SCRIPT.
