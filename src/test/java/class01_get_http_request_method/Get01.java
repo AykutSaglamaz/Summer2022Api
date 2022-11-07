@@ -58,11 +58,13 @@ public class Get01 {
         Soft Assertion (Verification)'da butun kodlar calisir/kosar ve butun assertion'lar veya hatalar icin rapor alirsiniz
      */
         // statusCode, contentType ve StatusLine gibi console yazdirma
-        System.out.println(response.getStatusCode());
-        System.out.println(response.getContentType());
-        System.out.println(response.getStatusLine());
-        System.out.println(response.getHeaders());
-        System.out.println(response.getTime());
+        System.out.println("Status Code: " + response.getStatusCode());
+        System.out.println("Content Type: " + response.getContentType());
+        System.out.println("Status Line: " +response.getStatusLine());
+        System.out.println("Headers: " + response.getHeaders());// for all headers
+        System.out.println("Time: " + response.getTime());
+
+        System.out.println("Via: " + response.getHeader("Via"));// single header icin
 
     }
 }

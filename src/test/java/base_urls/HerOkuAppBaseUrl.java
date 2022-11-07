@@ -13,6 +13,8 @@ public class HerOkuAppBaseUrl {
     protected RequestSpecification spec;
 
     //Eger methodun uzerinde @Before annotation kullanirsaniz, bu method her bir test method'dan once calisir
+    // @Before anotation i ne zaman kullanirsiniz,
+    // cevap: eger ben bir methodun herbir test methodundan once calismasini istiyorsam @Before kullanirim
     @Before
     public void setUp(){
         spec = new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();

@@ -31,8 +31,9 @@ public class Get02 extends HerOkuAppBaseUrl {
 
     //1.Adim: Set URL
     //String url = "https://restful-booker.herokuapp.com/booking/1001"; ==> Not recommended
-        //base_url sinifinda HerOkuAppBaseUrl sinifi olusturur lazim oldugunda kullan
-    spec.pathParams("first","booking", "second", 1001);
+        //base_url sinifinda HerOkuAppBaseUrl sinifi olusturur ve lazim oldugunda kullanirim
+
+        spec.pathParams("first","booking", "second", 1001);
         //https://restful-booker.herokuapp.com -> base parameter
         //booking -> first parameter
         //1001 -> second parameter
@@ -43,7 +44,7 @@ public class Get02 extends HerOkuAppBaseUrl {
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();// to print body on the console -> Not Found
 
-    //4.Adim: Assertion
+    //4.Adim: Do Assertion
         response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
 
     //assertTrue(true) ==> Green tick            assertTrue(false) ==> Red cross
@@ -55,7 +56,8 @@ public class Get02 extends HerOkuAppBaseUrl {
         //If response.asString().contains("ArcaneData") returns false, you will get green tick
 
     //Expected Data test case'den gelir, Actual Data ise  API'dan gelir
-    //assertEquals()  returns (dondurur) true(test passes) eger argumentlar eslesirse
+    //assertEquals()  true (dondurur) (test passes)  eger argumentlar eslesirse
+        //argument ==> real data you used inside the method
         assertEquals("Cowboy", response.getHeader("Server"));
     }
 

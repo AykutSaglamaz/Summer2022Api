@@ -20,6 +20,7 @@ public class Get05 extends HerOkuAppBaseUrl {
 	  	And
 	  	    Data'lar arasinda ismi (firstname) “Dane” ve soyismi (lastname) “Dominguez” olan biri olmali
      */
+
 // Query Params' spesifik parametreler secmek icindir (orn. ?firstname=Dane&lastname=Dominguez)
 // pathparams ise resource (kaynagi) kucultmek/daraltmak icindir
 
