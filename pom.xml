@@ -50,6 +50,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <artifactId>jackson-mapper-asl</artifactId>
     <version>1.9.13</version>
   </dependency>
+    <dependency>
+        <groupId>org.apache.maven.surefire</groupId>
+        <artifactId>surefire-api</artifactId>
+        <version>3.0.0-M1</version>
+        <scope>test</scope>
+    </dependency>
 </dependencies>
 
 <build>
