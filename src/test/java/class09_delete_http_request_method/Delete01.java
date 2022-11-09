@@ -37,13 +37,19 @@ public class Delete01 extends JsonPlaceHolderBaseUrl {
         Response response = given().spec(spec).contentType(ContentType.JSON).when().delete("/{first}/{second}");
         response.prettyPrint();
 
-        //GSON
+        //4.step: Do assertion/verification
+            //GSON==> de-serialization
         Map<String ,Object> actualMap = response.as(HashMap.class);
 
-        //4.step: Do assertion/verification
-
-        response.then().assertThat().statusCode(200);
+        response.
+                then().
+                assertThat().
+                statusCode(200);
+        //1.yol
         assertEquals(expectedMap, actualMap);
+        //2.yol==> recommended
+        assertTrue(actualMap.isEmpty());
+        //3.yol
         assertTrue(actualMap.size()==0);
 
     }

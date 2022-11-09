@@ -39,23 +39,27 @@ public class PostWithPojo01 extends JsonPlaceHolderBaseUrl {
         spec.pathParam("first", "todos");
 
         //2.Set the request body
-        JsonPlaceHolderPojo requestBody = new JsonPlaceHolderPojo(55,"Tidy your room", false);
+        JsonPlaceHolderPojo requestBodyPojo = new JsonPlaceHolderPojo(55,"Tidy your room", false);
 
         //3. Step: send the request and get the response
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(requestBody).post("/{first}");
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(requestBodyPojo).post("/{first}");
 
         //4.Step: do assertion
         //1.way
-        response.then().assertThat().statusCode(200).body("userId", equalTo(requestBody.getUserId()),
-                "title", equalTo(requestBody.getTitle()),
-                "completed", equalTo(requestBody.getCompleted()));
+        response.
+                then().
+                assertThat().
+                statusCode(200).
+                body("userId", equalTo(requestBodyPojo.getUserId()),
+                "title", equalTo(requestBodyPojo.getTitle()),
+                "completed", equalTo(requestBodyPojo.getCompleted()));
 
-        //2. way: Do-Serialization
+        //2. way: use De-Serialization
         JsonPlaceHolderPojo actualData = response.as(JsonPlaceHolderPojo.class);
 
-        assertEquals(requestBody.getUserId(), actualData.getUserId());
-        assertEquals(requestBody.getCompleted(), actualData.getCompleted());
-        assertEquals(requestBody.getTitle(), actualData.getTitle());
+        assertEquals(requestBodyPojo.getUserId(), actualData.getUserId());
+        assertEquals(requestBodyPojo.getCompleted(), actualData.getCompleted());
+        assertEquals(requestBodyPojo.getTitle(), actualData.getTitle());
 
     }
 }

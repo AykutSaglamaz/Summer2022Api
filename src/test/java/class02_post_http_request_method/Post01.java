@@ -39,8 +39,8 @@ public class Post01 extends HerOkuAppBaseUrl {
                         "totalprice": 11111,
                         "depositpaid": true,
                         "bookingdates": {
-                                 "checkin": "2020-09-09",
-                                 "checkout": "2020-09-21"
+                                 "checkin": "2021-09-09",
+                                 "checkout": "2021-09-21"
                                      }
                          }
                    }

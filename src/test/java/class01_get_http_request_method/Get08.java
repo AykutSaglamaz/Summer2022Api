@@ -13,12 +13,15 @@ import static org.junit.Assert.assertEquals;
 public class Get08  extends JsonPlaceHolderBaseUrl {
     /*
             API test'te en buyuk zorluk data type'tir
-     1) Java Objects (butun non-primitiveler), Maps ve Primitive'leri data type olarak kullanir. API,  XML, Json gibi formatlari kullanir.
-        Java ve API farkli data type kullanir bunlarin birbirleriyle iletisim kurmasi lazim
+     1) Java Objects (butun non-primitiveler), Maps ve Primitive'leri data type olarak kullanir.
+        API ise  XML, Json gibi formatlari kullanir.
+        Java ve API farkli data type kullanir bunlarin birbirleriyle iletisim kurmasi gerekir
         Data type'lar farkli olunca iletisim (Communication) kurmak mumkun degildir.
-        --Bunun icin 2 tane secenegimiz var:
-        i) Data type'i Json'dan Java object cevir==>De-Serialization -> to convert json data type to java data type
-        ii) Data type'i Java Object to Json ==> Serialization
+
+            --Bunun icin 2 tane secenegimiz var:
+
+        i) Data type'i Json'dan Java object cevirir ==>De-Serialization
+        ii) Data type'i Java Object'ten Json'e cevirir  ==> Serialization
 
         Serialization and De-Serialization icin 2 tane secenegimiz var
             a) GSON--> Google olusturur
@@ -28,7 +31,7 @@ public class Get08  extends JsonPlaceHolderBaseUrl {
     Given
         https://jsonplaceholder.typicode.com/todos/2
     When
-            I send GET Request to the URL
+            Url'e GET Request gonder
     Then
             Status code is 200
             And "completed" is false
@@ -41,7 +44,7 @@ public class Get08  extends JsonPlaceHolderBaseUrl {
             "id": 2,
             "title": "quis ut nam facilis et officia qui",
             "completed": false
-    }
+         }
  */
 
     @Test

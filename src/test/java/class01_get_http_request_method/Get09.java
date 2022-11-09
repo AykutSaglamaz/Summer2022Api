@@ -16,20 +16,20 @@ public class Get09 extends HerOkuAppBaseUrl {
         Given
             https://restful-booker.herokuapp.com/booking/5450
         When
-            I send GET Request to the url
+            Url'e GET Request gonder
         Then
-            Response body should be like that;
+            Response body asagidaki gibi olmali;
             {
-                "firstname": "Jim",
+                "firstname": "Sally",
                 "lastname": "Brown",
                 "totalprice": 111,
                 "depositpaid": true,
                 "bookingdates":
-                   {
-                    "checkin": "2018-01-01",
-                    "checkout": "2019-01-01"
-                    }
-                  "additionalneeds": "Breakfast"
+                        {
+                        "checkin": "2013-02-23",
+                        "checkout": "2014-10-23"
+                         }
+                "additionalneeds": "Breakfast"
             }
      */
 
@@ -42,11 +42,11 @@ public class Get09 extends HerOkuAppBaseUrl {
         //2.Step: Set the expected data
 
         Map<String, String> expectedbookingdates = new HashMap<>();
-        expectedbookingdates.put("checkin", "2018-01-01");
-        expectedbookingdates.put("checkout", "2019-01-01");
+        expectedbookingdates.put("checkin", "2013-02-23");
+        expectedbookingdates.put("checkout", "2014-10-23");
 
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("firstname", "Jim");
+        expectedData.put("firstname", "Sally");
         expectedData.put("lastname", "Brown");
         expectedData.put("totalprice", 111);
         expectedData.put("depositpaid", true);
@@ -60,7 +60,7 @@ public class Get09 extends HerOkuAppBaseUrl {
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
-        Map<String, Object> actualData = response.as(HashMap.class);
+        Map<String, Object> actualData = response.as(HashMap.class);// de-serialization
         System.out.println(actualData);
 
         //4.Do assertion

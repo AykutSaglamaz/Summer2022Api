@@ -84,7 +84,7 @@ public class Get06 extends HerOkuAppBaseUrl {
         softAssert.assertEquals(json.getString("lastname"), "Brown", "Soyisim eslesmiyor");
         softAssert.assertEquals(json.getInt("totalprice"), 111, "Totalprice eslesmiyor");
 
-        // MUTLAKA EN SONDA assertAll() yapilmali. Eger assertAll() kullanmazsaniz herzaman test gecti gorunur fakat bu anlamli olmayabilir
+        // iii) MUTLAKA EN SONDA assertAll() yapilmali. Eger assertAll() kullanmazsaniz herzaman test gecti gorunur fakat bu anlamli olmayabilir
         softAssert.assertAll();
 
     }
