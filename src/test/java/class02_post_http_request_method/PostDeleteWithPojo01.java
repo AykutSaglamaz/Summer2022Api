@@ -14,7 +14,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
-public class PostDeleteWithPojo03 extends JsonPlaceHolderBaseUrl {
+public class PostDeleteWithPojo01 extends JsonPlaceHolderBaseUrl {
 
  /*
         Given
@@ -32,7 +32,7 @@ public class PostDeleteWithPojo03 extends JsonPlaceHolderBaseUrl {
      */
 
     @Test
-    public void PostDeleteWithPojo03() {
+    public void PostDeleteWithPojo01() {
         //1.Step set the url
         spec.pathParam("first", "todos");
 
@@ -49,9 +49,12 @@ public class PostDeleteWithPojo03 extends JsonPlaceHolderBaseUrl {
 
         spec.pathParams("first", "todos", "second", id);
 
+// delete request gonder, response al
         Response response2 = given().spec(spec).when().delete("/{first}/{second}");
 
+//response2 Map'e cevir
         Map<String , Object> actualData = response2.as(HashMap.class);
         assertTrue(actualData.size()==0);
+        assertTrue(actualData.isEmpty());
     }
 }

@@ -33,7 +33,7 @@ public class Get02 extends HerOkuAppBaseUrl {
     //String url = "https://restful-booker.herokuapp.com/booking/1001"; ==> Not recommended
         //base_url sinifinda HerOkuAppBaseUrl sinifi olusturur ve lazim oldugunda kullanirim
 
-        spec.pathParams("first","booking", "second", 1001);
+        spec.pathParams("first","booking", "second", 10012);
         //https://restful-booker.herokuapp.com -> base parameter
         //booking -> first parameter
         //1001 -> second parameter
