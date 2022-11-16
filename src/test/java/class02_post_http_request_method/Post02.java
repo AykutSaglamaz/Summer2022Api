@@ -21,7 +21,7 @@ public class Post02 extends JsonPlaceHolderBaseUrl {
                     "completed": false
                   }
         When
-                I send POST Request to the Url
+               Url'e POST Request gonder
         Then
             Status code is 201
         And
@@ -50,7 +50,7 @@ public class Post02 extends JsonPlaceHolderBaseUrl {
                                 spec(spec). //endpoint
                                 contentType(ContentType.JSON).
                                 body(expectedData).
-                            when().
+                                when().
                                 post("/{first}");
         response.prettyPrint();
 

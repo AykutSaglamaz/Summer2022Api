@@ -50,7 +50,8 @@ public class Patch01 extends JsonPlaceHolderBaseUrl {
         //1.Logic: No need to verify data which you did not touch
         response.then().assertThat().statusCode(200).body("title", equalTo(requestBodyMap.get("title")));
 
-        //2.Logic:
+        //2.Logic:data which you did not touch maybe change, "title" affected the "userId" and "completed"
+        //so I need to do assertion for "userId" and "completed" as well even you did not touch them
         Map<String, Object> expectedDataMap = requestBody.expectedDataSetUpWithAllKeys(10, "Wash the dishes", true);
         response.then().assertThat().statusCode(200).body("userId", equalTo(expectedDataMap.get("userId")),
                 "title", equalTo(expectedDataMap.get("title")),

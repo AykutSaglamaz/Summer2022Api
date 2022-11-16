@@ -20,7 +20,7 @@ public class PostWithPojo01 extends JsonPlaceHolderBaseUrl {
               "completed": false
               }
     When
-            I send POST Request to the Url
+            Url'e POST Request gonder
     Then
         Status code is 201
     And

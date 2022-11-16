@@ -4,7 +4,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties (ignoreUnknown = true)
 // I am telling POJO, when you convert from json to pojo if some data (variable) is unknown then ignore them.
-//
+
 /*
 interview Q:
     You are sending firstname and lastname by using POST() but in the response you see firstname, lastname
@@ -16,7 +16,7 @@ public class JsonPlaceHolderPojo {
     //POJO ==> plain old java object
     /*
     POJO icinde private variable, getter ve setter, butun parametrelere sahip constructor
-        ve parametresiz constructor ile en sonra toString method OLMALI
+        ve parametresiz constructor ile en sonda toString method OLMALI
      */
 
 //Create private variables

@@ -41,17 +41,19 @@ public class Post02_updated extends JsonPlaceHolderBaseUrl {
 
         //2.step set the expected data
         JsonPlaceHolderTestData expectedData = new JsonPlaceHolderTestData();
-        Map<String, Object> expectedDataMap = expectedData.expectedDataSetUpWithAllKeys(66, "Tidy your room", false);
+        Map<String, Object> expectedDataMap = expectedData.expectedDataSetUp();
+
+//        Map<String, Object> expectedDataMap = expectedData.expectedDataSetUpWithAllKeys(66, "Tidy your room", false);
 
         //3.Step: Send the request and get the response
 
         Response response = given().
-                spec(spec).//endpoint
+                        spec(spec).//endpoint
                         auth().basic("admin", "1234").//credentials
                         contentType(ContentType.JSON).//contentType
                         body(expectedDataMap).
-                when().
-                post("/{first}");
+                        when().
+                        post("/{first}");
 
         response.prettyPrint();
         // I added Status code to use it in assertion

@@ -17,7 +17,7 @@ public class Delete01 extends JsonPlaceHolderBaseUrl {
          Given
             https://jsonplaceholder.typicode.com/todos/198
         When
-            I send DELETE Request to the Url
+            Url'e DELETE Request gonder
         Then
             Status code is 200
             And Response body is {}

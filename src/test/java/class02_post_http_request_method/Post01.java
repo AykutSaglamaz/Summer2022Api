@@ -27,10 +27,10 @@ public class Post01 extends HerOkuAppBaseUrl {
                         }
          }
     When
-         I send POST Request to the Url
+         URL'e POST Request gonder
     Then
         Status code is 200
-        And response body should be like
+        And response body asagidaki olmali
                 {
               "bookingid": 11,
               "booking": {

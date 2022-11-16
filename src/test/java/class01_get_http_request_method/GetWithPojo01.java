@@ -15,7 +15,7 @@ public class GetWithPojo01 extends HerOkuAppBaseUrl {
     Given
             https://restful-booker.herokuapp.com/booking/2
     When
-        I send GET Request to the URL
+       Url'e GET Request gonder
     Then
         Status code is 200
     And response body is like
@@ -59,6 +59,7 @@ public class GetWithPojo01 extends HerOkuAppBaseUrl {
         assertEquals("Lastname are not matching: ", expectedData.getLastname(), actualData.getLastname());
         assertEquals("Total Price are not matching: ", expectedData.getTotalprice(), actualData.getTotalprice());
         assertEquals("Deposit paid are not matching: ", expectedData.getDepositpaid(), actualData.getDepositpaid());
+
         assertEquals( "Check in dates are not matching: ", expectedData.getBookingdates().getCheckin(), actualData.getBookingdates().getCheckin());
         assertEquals("Check out dates are not matching: ", expectedData.getBookingdates().getCheckout(), actualData.getBookingdates().getCheckout());
 

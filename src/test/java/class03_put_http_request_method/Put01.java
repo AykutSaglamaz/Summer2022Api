@@ -21,7 +21,7 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
     //patch method is for partial update
   /*
     Given
-    https://jsonplaceholder.typicode.com/todos/198
+        https://jsonplaceholder.typicode.com/todos/198
 
       {
         "userId": 21,
@@ -29,15 +29,15 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
         "completed": false
        }
     When
-         I send PUT Request to the Url
-         with the PUT Request body like
+         URl'e PUT Request gonder
     Then
          Status code is 200
-         And response body is like   {
-                                        "userId": 21,
-                                        "title": "Wash the dishes",
-                                        "completed": false
-                                       }
+         And response body is like
+         {
+            "userId": 21,
+            "title": "Wash the dishes",
+            "completed": false
+           }
      */
     @Test
     public void put01(){
@@ -84,7 +84,6 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
         Gson gson = new Gson();
         //2.Step: By using 'gson' object method to convert Java Object to Json Data
         String jsonFromMap = gson.toJson(ages);
-
         System.out.println(jsonFromMap);
 
 

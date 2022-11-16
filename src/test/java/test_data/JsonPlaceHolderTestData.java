@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class JsonPlaceHolderTestData {
 
-    /*       for the Post02_update class
+    /*       for the Post02_update class */
+
     public Map<String, Object> expectedDataSetUp(){
         Map<String, Object> expectedData = new HashMap<>();
         expectedData.put("userId", 66);
@@ -13,7 +14,7 @@ public class JsonPlaceHolderTestData {
         expectedData.put("completed", false);
         return expectedData;
     }
-     */
+
 
     public Map<String, Object> expectedDataSetUpWithAllKeys(Integer userId, String title, Boolean completed){
         Map<String, Object> expectedData = new HashMap<>();
@@ -39,4 +40,6 @@ public class JsonPlaceHolderTestData {
         String expectedData =  "{"+"\"userId\":" + userId + "," + "\"title\":" + "\"" + title + "\"" + "," + "\"completed\":" + completed + "};";
         return expectedData;
     }
+
+
 }
