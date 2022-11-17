@@ -63,6 +63,7 @@ public class PostWithPojo03 extends HerOkuAppBaseUrl {
         //3.step: send the request and get the response
         Response response = given().spec(spec).contentType(ContentType.JSON).body(requestBody).when().post("/{first}");
         response.prettyPrint();
+
     // DB'de yeni data olusturduktan sonra, "Get" methodunda kullanmak icin bizim "bookingid" ye ihtiyacimiz var
         // "bookingid" yeni olusturulan POST Response Body'den alinir
         JsonPath json = response.jsonPath();
