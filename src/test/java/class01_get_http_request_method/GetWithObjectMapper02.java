@@ -55,9 +55,6 @@ public class GetWithObjectMapper02 extends HerOkuAppBaseUrl {
                 "}";
         HashMap<String, Object> expectedDataMap = JsonUtil.convertJsonToJava(expectedData, HashMap.class);
 
-        //2.Way: Create a setUp method to convert Json data to String dynamically ==> Homework
-
-
         //3.Step: Send the request and get the response
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
