@@ -86,17 +86,5 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
 
       System.out.println(jsonFromMap);
 
-
-
-
-
-
-
-
    }
-
-
-
-
-
 }

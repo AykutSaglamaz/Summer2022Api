@@ -26,7 +26,7 @@ public class Get05 extends HerOkuAppBaseUrl {
     //1.step: Set the URL
     spec.
             pathParam("first", "booking").
-            queryParams("firstname", "Mary", "lastname", "Ericsson");
+            queryParams("firstname", "Dane", "lastname", "Dominguez");
 
     //2.Step; Set the expected data
 

@@ -13,7 +13,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
-public class PostDeleteWithPojo03 extends JsonPlaceHolderBaseUrl {
+public class PostDeleteWithPojo01 extends JsonPlaceHolderBaseUrl {
 
  /*
         Given
@@ -40,17 +40,21 @@ public class PostDeleteWithPojo03 extends JsonPlaceHolderBaseUrl {
 
         //3. Step: send the request and get the response
         Response response = given().spec(spec).contentType(ContentType.JSON).body(requestBody).post("/{first}");
-
+        response.prettyPrint();
         //Deletion part
         //Get the id of newly created data
         JsonPath json = response.jsonPath();
         Integer id = json.getInt("id");
 
         spec.pathParams("first", "todos", "second", id);
-
+// delete request gonder, response al
         Response response2 = given().spec(spec).when().delete("/{first}/{second}");
+        response2.prettyPrint();
 
+//response2 Map'e cevir
         Map<String , Object> actualData = response2.as(HashMap.class);
         assertTrue(actualData.size()==0);
+
+        assertTrue(actualData.isEmpty());
     }
 }

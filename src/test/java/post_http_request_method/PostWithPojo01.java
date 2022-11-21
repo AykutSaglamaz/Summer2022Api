@@ -50,7 +50,7 @@ public class PostWithPojo01 extends JsonPlaceHolderBaseUrl {
                 "title", equalTo(requestBody.getTitle()),
                 "completed", equalTo(requestBody.getCompleted()));
 
-        //2. way: Do-Serialization
+        //2. way: De-Serialization
        JsonPlaceHolderPojo actualData = response.as(JsonPlaceHolderPojo.class);
 
        assertEquals(requestBody.getUserId(), actualData.getUserId());

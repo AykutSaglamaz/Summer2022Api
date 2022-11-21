@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class AgroMonitoringTestData {
 
-    public float coordinates[][][] = {  {   {-121.1958f, 37.6683f},
+    public float coordinates[][][] = {  {
+            {-121.1958f, 37.6683f},
             {-121.1779f, 37.6687f},
             {-121.1773f, 37.6792f},
             {-121.1958f, 37.6792f},

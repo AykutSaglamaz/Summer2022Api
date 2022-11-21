@@ -17,6 +17,7 @@ POJO
 @JsonIgnoreProperties
 #when you have a limited test data
 Se / De -Serialization
+
 How do you do api testing
 I am using Postman.
 I do use Restful Api

@@ -41,7 +41,7 @@ public class Get09 extends HerOkuAppBaseUrl {
         //2.Step: Set the expected data
 
         Map<String, String> expectedbookingdates = new HashMap<>();
-        expectedbookingdates.put("checking", "2016-09-09");
+        expectedbookingdates.put("checkin", "2016-09-09");
         expectedbookingdates.put("checkout", "2017-09-21");
 
         Map<String, Object> expectedData = new HashMap<>();

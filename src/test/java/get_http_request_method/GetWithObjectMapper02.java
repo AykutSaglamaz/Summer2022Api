@@ -13,12 +13,12 @@ import static org.junit.Assert.assertEquals;
 
 public class GetWithObjectMapper02 extends HerOkuAppBaseUrl {
 
-        /*
-            Given
+/*
+    Given
                     https://restful-booker.herokuapp.com/booking/2
-            When
+    When
                      I send GET Request to the URL
-            Then
+    Then
                      Status code is 200
     {
     "firstname": "Mark",
@@ -26,12 +26,12 @@ public class GetWithObjectMapper02 extends HerOkuAppBaseUrl {
     "totalprice": 726,
     "depositpaid": true,
     "bookingdates": {
-    "checkin": "2015-08-07",
-    "checkout": "2020-10-25"
-    },
+        "checkin": "2015-08-07",
+        "checkout": "2020-10-25"
+        },
     "additionalneeds": "Breakfast"
     }
-         */
+ */
 
     @Test
     public void getWithObjectMapper02(){

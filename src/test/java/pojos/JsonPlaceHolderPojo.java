@@ -20,7 +20,7 @@ public class JsonPlaceHolderPojo {
         this.completed = completed;
     }
 
-    public JsonPlaceHolderPojo(Integer userId) {
+    public JsonPlaceHolderPojo() {
     }
 
     //Generate getters and setters

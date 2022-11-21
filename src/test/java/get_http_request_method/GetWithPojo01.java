@@ -41,7 +41,7 @@ public class GetWithPojo01 extends HerOkuAppBaseUrl {
 
         BookingDatesPojo bookingDates = new BookingDatesPojo("2016-12-06","2021-03-21");
         //expectedData is given by user
-        BookingPojo expectedData = new BookingPojo("Mary", "Smith", 502, false, bookingDates, "Breakfast");
+        BookingPojo expectedData = new BookingPojo("James", "Brown", 2400, false, bookingDates, "Breakfast");
 
         //3.step :  Send the request and get the response
 
@@ -53,12 +53,12 @@ public class GetWithPojo01 extends HerOkuAppBaseUrl {
         BookingPojo actualData= response.as(BookingPojo.class);
 
         assertEquals(200,response.getStatusCode() );
-        assertEquals("Firstname are not matching " + expectedData.getFirstname(), actualData.getFirstname());
-        assertEquals("Lastname are not matching "+ expectedData.getLastname(), actualData.getLastname());
-        assertEquals("Total Price are not matching "+expectedData.getTotalprice(), actualData.getTotalprice());
-        assertEquals("Deposit paid are not matching "+ expectedData.getDepositpaid(), actualData.getDepositpaid());
-        assertEquals( "Check in dates are not matching " + expectedData.getBookingdates().getCheckin(), actualData.getBookingdates().getCheckin());
-        assertEquals("Check out dates are not matching "+ expectedData.getBookingdates().getCheckout(), actualData.getBookingdates().getCheckout());
+        assertEquals("Firstname are not matching ", expectedData.getFirstname(), actualData.getFirstname());
+        assertEquals("Lastname are not matching ", expectedData.getLastname(), actualData.getLastname());
+        assertEquals("Total Price are not matching ", expectedData.getTotalprice(), actualData.getTotalprice());
+        assertEquals("Deposit paid are not matching ", expectedData.getDepositpaid(), actualData.getDepositpaid());
+        assertEquals( "Check in dates are not matching ", expectedData.getBookingdates().getCheckin(), actualData.getBookingdates().getCheckin());
+        assertEquals("Check out dates are not matching ", expectedData.getBookingdates().getCheckout(), actualData.getBookingdates().getCheckout());
 
 
     }
