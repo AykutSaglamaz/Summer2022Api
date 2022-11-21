@@ -53,7 +53,7 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
      */
     @Test
     public void postGetWithObjectMapperAndPojo01(){
-                    //POST Request gondermek icin 1. 2. ve 3. adim islemleri yapilmali
+       //POST Request gondermek icin 1. 2. ve 3. adim islemleri yapilmali
         //1.adim: Url'e set et
         spec.pathParam("first", "booking");
 
@@ -72,6 +72,7 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
         Integer bookingid = postResponsePojo.getBookingid();
 
                     // bookingid kullanarak GET Request gonderildi 1.adim, 2. adim ve 3. adim
+
         //1.adim: Url'i GET icin set et
         spec.pathParams("first", "booking", "second", bookingid);
 
@@ -86,7 +87,9 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
         BookingPojo getResponsePojo = JsonUtil.convertJsonToJava(response1.asString(), BookingPojo.class);
         System.out.println(getResponsePojo);
 
-        //4.adim: Assertion yapp
+
+        //4.adim: Assertion yap
+
         response1.then().statusCode(200);
         assertEquals(200, response1.getStatusCode());
         assertEquals(postResponsePojo.getBooking().getFirstname(), getResponsePojo.getFirstname());
