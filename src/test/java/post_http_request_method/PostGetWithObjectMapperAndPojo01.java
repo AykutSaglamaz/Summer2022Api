@@ -93,8 +93,5 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
         assertEquals(expectedData.getAdditionalneeds(), getResponsePojo.getAdditionalneeds());
 
 
-
-
-
     }
 }
