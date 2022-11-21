@@ -53,6 +53,7 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
      */
     @Test
     public void postGetWithObjectMapperAndPojo01(){
+                    //POST Request gondermek icin 1. 2. ve 3. adim islemleri yapilmali
         //1.adim: Url'e set et
         spec.pathParam("first", "booking");
 
@@ -64,11 +65,13 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
         Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
 
+                    // POST Request Body'i Java Object'e cevirmek icin ObjectMapper kullanildi
         HerOkuAppPostResponseBodyPojo postResponsePojo = JsonUtil.convertJsonToJava(response.asString(), HerOkuAppPostResponseBodyPojo.class);
         System.out.println(postResponsePojo);
-
+                    // postResponsePojo'dan bookingid degeri almak icin GETTER kullanildi
         Integer bookingid = postResponsePojo.getBookingid();
 
+                    // bookingid kullanarak GET Request gonderildi 1.adim, 2. adim ve 3. adim
         //1.adim: Url'i GET icin set et
         spec.pathParams("first", "booking", "second", bookingid);
 
@@ -79,10 +82,11 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
         Response response1 = given().spec(spec).contentType(ContentType.JSON).when().get("/{first}/{second}");
         response1.prettyPrint();
 
+                        //ObjectMapper kullarak GET response body'i Java Object'e cevirdim
         BookingPojo getResponsePojo = JsonUtil.convertJsonToJava(response1.asString(), BookingPojo.class);
         System.out.println(getResponsePojo);
 
-        //4.adim: Assertion yap
+        //4.adim: Assertion yapp
         response1.then().statusCode(200);
         assertEquals(200, response1.getStatusCode());
         assertEquals(postResponsePojo.getBooking().getFirstname(), getResponsePojo.getFirstname());
